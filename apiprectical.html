@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API</title>
+	<style>
+		body{margin: 0px;padding: 0px;	box-sizing: border-box;}
+		section{background-color: grey;width: 100%;height: 100%;}
+		h1{
+			font-size: 30px;
+			text-align: center;
+		}
+		.centerDiv{
+			border:2px solid black;
+			height: 100%;
+			width: 50%;
+			text-align: center;
+			margin: auto;
+			align-items: center;
+			background-color: orange;
+
+
+	      }
+	      .details{
+	      	margin:40px;
+	      	color: bold;
+	      	font-size: 25px;
+	      	padding: 10px;
+	      }
+	      input{
+	      	margin-top:10px;
+	      	padding: 10px;
+	      }
+	      img{
+	      	margin:40px;
+	      }
+	      button{
+	      	padding: 4px;
+	      	margin-bottom: 40px;
+	      	background-color: blue;
+	      	color: white;
+	      	font-size: 15px;
+	      	border-radius: 10px;
+	      }
+	</style>
+</head>
+<body>
+<section>
+	<h1>What your name and Look Your Photo</h1>
+	<div class="centerDiv">
+		<div class="details">
+			<label>Enter Your Name:-</label><br>
+			<input type="text" name="" id="nameid">
+		</div>
+		<div class="img">
+			<img src="img.jpg" width="200" height="200" class="imgchangeid">
+		</div>
+		<button>Click</button>
+	</div>
+
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    const name =$('#nameid').val();
+    alert(name);
+    $('.imgchangeid').attr('src',`https://joeschmoe.io/api/v1/${name}`)
+  });
+});
+</script>
+
+</body>
+</html>
